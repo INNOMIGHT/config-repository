@@ -144,5 +144,117 @@ Json Response :
 
 ```
 
+DELETE USER
+```bash
+URL : http://localhost:9002/user/delete-user
+HTTP Method : POST
+```
+Json Response :
+```json
+User has been deleted from the database.
+```
 
+
+Account Microservice APIs - 
+
+GET ACCOUNT OF USER
+```bash
+URL : http://localhost:9002/account/user/1028
+HTTP Method : GET
+```
+Json Response :
+```json
+{
+    "accNo": 2117,
+    "accountBalance": 0,
+    "userId": 1028,
+    "branch": "Jabalpur",
+    "ifsc": "ICIC914801"
+}
+```
+
+ADD MONEY TO USER ACCOUNT 
+```bash
+URL : http://localhost:9002/account/add-money
+HTTP Method: POST
+```
+JSON Request:
+```json
+{
+    "user": {
+        "userId": 1311,
+        "name": "Vaibhav Shrivastava",
+        "email": "innomightmail@gmail.com",
+        "phoneNumber": 9755057765,
+        "account": {
+            "accNo": 1001,
+            "branch": "Jabalpur",
+            "accountBalance": 9500,
+            "userId": 1311,
+            "ifsc": "ICIC098764"
+        }
+    },
+    "amount": 5000
+}
+```
+JSON Response -
+```json
+Money has been deposited to the account
+```
+
+
+WITHDRAW MONEY FROM USER ACCOUNT 
+```bash
+URL : http://localhost:9002/account/add-money
+HTTP Method: POST
+```
+JSON Request:
+```json
+{
+    "user": {
+        "userId": 1311,
+        "name": "Vaibhav Shrivastava",
+        "email": "innomightmail@gmail.com",
+        "phoneNumber": 9755057765,
+        "account": {
+            "accNo": 1001,
+            "branch": "Jabalpur",
+            "accountBalance": 9500,
+            "userId": 1311,
+            "ifsc": "ICIC098764"
+        }
+    },
+    "amount": 5000
+}
+```
+JSON Response -
+```json
+Money has been withdrawn.
+```
+
+[If not sufficient amount in the bank account] -
+```json
+Not enough balance to perform transaction
+```
+
+
+DELETE ACCOUNT - 
+
+JSON Request - 
+```json
+{
+    "account": {
+            "accNo": 1001,
+            "branch": "Jabalpur",
+            "accountBalance": 9500,
+            "userId": 1311,
+            "ifsc": "ICIC098764"
+        }
+}
+```
+
+JSON Response - 
+```json
+The Account has been Deleted.
+```
 
