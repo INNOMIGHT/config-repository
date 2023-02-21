@@ -79,6 +79,7 @@ Json Response :
 }
 ```
 
+ADD USER
 ```bash
 URL : http://localhost:9002/user/add-user
 HTTP Method : POST
@@ -108,4 +109,40 @@ Json Response :
 }
 
 ```
+
+UPDATE USER
+```bash
+URL : http://localhost:9002/user/update-user
+HTTP Method : POST
+```
+Json Request :
+```json
+{
+    "userId": 9404
+    "user": {
+        "name": "Kavita Shrivasta Updated",
+        "email": "kavita@gmail.com",
+        "phoneNumber": "9827442418"
+        }
+}
+```
+Json Response :
+```json
+{
+    "userId": 9404,
+    "name": "Kavita Shrivasta Updated",
+    "email": "kavita@gmail.com",
+    "phoneNumber": 9827442418,
+    "account": {
+        "accNo": 8501,
+        "branch": "Jabalpur",
+        "accountBalance": 0,
+        "userId": 9404,
+        "ifsc": "ICIC152087"
+    }
+}
+
+```
+
+
 
